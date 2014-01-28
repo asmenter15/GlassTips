@@ -7,9 +7,9 @@ You have the option to configure 3 percentages to any percentage 5% - 50% and ca
 
 "ok glass"
 "calculate my tip"
-"Twenty dollars and 30 cents"
+"Twenty dollars and thirty cents"
 
 
-I apologize for the state of the code currently, I will be adding comments and cleaning up soon.\
+I apologize for the state of the code currently, I will be adding comments and cleaning up soon.
 
 Hope you enjoy it!!
