@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.androidiansoft.glass.glasstips"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="15" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_storefront_50"
+        android:label="@string/app_name" >
+        <activity
+            android:name="com.androidiansoft.glass.glasstips.TipCalculationActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="com.google.android.glass.VoiceTrigger"
+                android:resource="@xml/voice_trigger" />
+        </activity>
+        <activity
+            android:name="com.androidiansoft.glass.glasstips.ChoosePercentageActivity"
+            android:enabled="true"
+            android:label="@string/app_name"
+            android:theme="@style/MenuTheme" >
+        </activity>
+    </application>
+
+</manifest>

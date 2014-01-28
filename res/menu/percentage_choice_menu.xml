@@ -1,0 +1,34 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:orderInCategory="5"
+        android:title="@string/five_percent"/>
+    <item
+        android:orderInCategory="10"
+        android:title="@string/ten_percent"/>
+    <item
+        android:orderInCategory="15"
+        android:title="@string/fifteen_percent"/>
+    <item
+        android:orderInCategory="20"
+        android:title="@string/twenty_percent"/>
+    <item
+        android:orderInCategory="25"
+        android:title="@string/twentyfive_percent"/>
+    <item
+        android:orderInCategory="30"
+        android:title="@string/thirty_percent"/>
+    <item
+        android:orderInCategory="35"
+        android:title="@string/thirtyfive_percent"/>
+    <item
+        android:orderInCategory="40"
+        android:title="@string/forty_percent"/>
+    <item
+        android:orderInCategory="45"
+        android:title="@string/fortyfive_percent"/>
+    <item
+        android:orderInCategory="50"
+        android:title="@string/fifty_percent"/>
+
+</menu>

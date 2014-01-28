@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GlassTips</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="voice_trigger">Calculate my tip</string>
+    <string name="well_how_much_bill">How much was your bill?</string>
+    <string name="first_percentage">Change 1st Percent</string>
+    <string name="second_percentage">Change 2nd Percent</string>
+    <string name="third_percentage">Change 3rd Percent</string>
+    <string name="new_tip">New Tip Calculation</string>
+    <string name="voice_error">Did not recognize a number in your voice, please try again</string>
+	<string name="five_percent">5%</string>
+	<string name="ten_percent">10%</string>
+	<string name="fifteen_percent">15%</string>
+	<string name="twenty_percent">20%</string>
+	<string name="twentyfive_percent">25%</string>
+	<string name="thirty_percent">30%</string>
+	<string name="thirtyfive_percent">35%</string>
+	<string name="forty_percent">40%</string>
+	<string name="fortyfive_percent">45%</string>
+	<string name="fifty_percent">50%</string>
+    
+</resources>

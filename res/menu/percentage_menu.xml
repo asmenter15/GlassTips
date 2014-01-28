@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/new_tip"
+        android:title="@string/new_tip"/>
+    <item
+        android:id="@+id/first"
+        android:title="@string/first_percentage"/>
+    <item
+        android:id="@+id/second"
+        android:title="@string/second_percentage"/>
+    <item
+        android:id="@+id/third"
+        android:title="@string/third_percentage"/>
+
+</menu>

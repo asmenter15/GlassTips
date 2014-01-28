@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp" >
+
+        <TextView
+            android:id="@+id/first_percent_text"
+            style="@style/ChronometerComponent"
+            android:layout_width="wrap_content"
+            android:text="15%" />
+
+        <TextView
+            android:id="@+id/second_percent_text"
+            style="@style/ChronometerComponent"
+            android:text="20%" />
+
+        <TextView
+            android:id="@+id/third_percent_text"
+            style="@style/ChronometerComponent"
+            android:text="30%" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp" >
+
+        <TextView
+            android:id="@+id/first_percent"
+            style="@style/ChronometerComponent"
+            android:text="$5.00" />
+
+        <TextView
+            android:id="@+id/second_percent"
+            style="@style/ChronometerComponent"
+            android:text="$6.00" />
+
+        <TextView
+            android:id="@+id/third_percent"
+            style="@style/ChronometerComponent"
+            android:text="$8.00" />
+    </LinearLayout>
+
+</FrameLayout>
