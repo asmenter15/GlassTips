@@ -64,49 +64,52 @@ public class TipCalculationActivity extends Activity {
 		ArrayList<Integer> percentages = new ArrayList<Integer>();
 		String[] words;
 		double finalBill = 0;
+		Card card = new Card(this);
 
-		words = voiceResults.get(0).split(" ");
+		if(voiceResults != null) {
+			words = voiceResults.get(0).split(" ");
 
-		percentages.add(sp.getInt(PERCENTAGE1, 15));
-		percentages.add(sp.getInt(PERCENTAGE2, 20));
-		percentages.add(sp.getInt(PERCENTAGE3, 25));
+			percentages.add(sp.getInt(PERCENTAGE1, 15));
+			percentages.add(sp.getInt(PERCENTAGE2, 20));
+			percentages.add(sp.getInt(PERCENTAGE3, 25));
 
-		for (int i = 0; i < words.length; i++) {
-			String temp = words[i];
-			boolean exitFor = false;
-			for (int j = 0; j < words[i].length(); j++) {
-				if (!exitFor) {
-					try {
-						Double.parseDouble(temp.substring(j));
-						Log.d(TAG,
-								"parsed substring = " + words[i].substring(j));
-						finalBill = Double.parseDouble(words[i].substring(j));
-						exitFor = true;
-					} catch (NumberFormatException nfe) {
+			for (int i = 0; i < words.length; i++) {
+				String temp = words[i];
+				boolean exitFor = false;
+				for (int j = 0; j < words[i].length(); j++) {
+					if (!exitFor) {
+						try {
+							Double.parseDouble(temp.substring(j));
+							Log.d(TAG,
+									"parsed substring = " + words[i].substring(j));
+							finalBill = Double.parseDouble(words[i].substring(j));
+							exitFor = true;
+						} catch (NumberFormatException nfe) {
 
+						}
 					}
 				}
 			}
-		}
 
-		Card card = new Card(this);
+			Log.d(TAG, "bill parsed = " + finalBill);
 
-		Log.d(TAG, "bill parsed = " + finalBill);
+			if (finalBill == 0) {
+				card.setText(R.string.voice_error);
+			} else {
+				double firstTip = finalBill * (percentages.get(0) * .01);
+				double secondTip = finalBill * (percentages.get(1) * .01);
+				double thirdTip = finalBill * (percentages.get(2) * .01);
 
-		if (finalBill == 0) {
-			card.setText(R.string.voice_error);
+				card.setText(percentages.get(0) + "% = $"
+						+ String.format("%.2f", firstTip) + "\n"
+						+ percentages.get(1) + "% = $"
+						+ String.format("%.2f", secondTip) + "\n"
+						+ percentages.get(2) + "% = $"
+						+ String.format("%.2f", thirdTip));
+
+			}
 		} else {
-			double firstTip = finalBill * (percentages.get(0) * .01);
-			double secondTip = finalBill * (percentages.get(1) * .01);
-			double thirdTip = finalBill * (percentages.get(2) * .01);
-
-			card.setText(percentages.get(0) + "% = $"
-					+ String.format("%.2f", firstTip) + "\n"
-					+ percentages.get(1) + "% = $"
-					+ String.format("%.2f", secondTip) + "\n"
-					+ percentages.get(2) + "% = $"
-					+ String.format("%.2f", thirdTip));
-
+			card.setText(R.string.voice_error);
 		}
 
 		setContentView(card.toView());
