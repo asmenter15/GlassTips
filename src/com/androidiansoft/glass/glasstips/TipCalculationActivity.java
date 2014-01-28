@@ -1,20 +1,20 @@
 package com.androidiansoft.glass.glasstips;
 
 /*
-Copyright 2014 Aaron Smentkowski
+ Copyright 2014 Aaron Smentkowski
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+ http://www.apache.org/licenses/LICENSE-2.0
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ */
 
 import java.util.ArrayList;
 
@@ -66,7 +66,7 @@ public class TipCalculationActivity extends Activity {
 		double finalBill = 0;
 		Card card = new Card(this);
 
-		if(voiceResults != null) {
+		if (voiceResults != null) {
 			words = voiceResults.get(0).split(" ");
 
 			percentages.add(sp.getInt(PERCENTAGE1, 15));
@@ -81,8 +81,10 @@ public class TipCalculationActivity extends Activity {
 						try {
 							Double.parseDouble(temp.substring(j));
 							Log.d(TAG,
-									"parsed substring = " + words[i].substring(j));
-							finalBill = Double.parseDouble(words[i].substring(j));
+									"parsed substring = "
+											+ words[i].substring(j));
+							finalBill = Double.parseDouble(words[i]
+									.substring(j));
 							exitFor = true;
 						} catch (NumberFormatException nfe) {
 
@@ -157,13 +159,14 @@ public class TipCalculationActivity extends Activity {
 			openOptionsMenu();
 			break;
 		case SPEECH_TASK:
-			voiceResults = data
-					.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-			Log.d(TAG,
-					"VoiceResults from speech intent AT0: "
-							+ voiceResults.get(0));
-			if (voiceResults != null) {
-				createView(voiceResults);
+			if (resultCode == RESULT_OK) {
+				voiceResults = data
+						.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+				Log.d(TAG, "VoiceResults from speech intent AT0: "
+						+ voiceResults.get(0));
+				if (voiceResults != null) {
+					createView(voiceResults);
+				}
 			}
 			break;
 		default:
