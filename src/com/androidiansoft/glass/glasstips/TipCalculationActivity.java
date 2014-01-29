@@ -48,6 +48,7 @@ public class TipCalculationActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Log.d(TAG, "oncreate");
 		sp = PreferenceManager.getDefaultSharedPreferences(this);
 		voiceResults = getIntent().getExtras().getStringArrayList(
 				RecognizerIntent.EXTRA_RESULTS);
